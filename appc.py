@@ -366,7 +366,7 @@ class KMLParser:
 def convert_to_csv(waypoints: list, source_filename: str, translator, parser) -> str:
     output = io.StringIO()
     writer = csv.writer(output)
-    writer.writerow(["S.No", "Name (Tamil)", "Name (Tanglish)", "Latitude", "Longitude"])
+    writer.writerow(["S.No", "Name ", "Name ", "Latitude", "Longitude"])
     for i, wp in enumerate(waypoints, 1):
         clean_name    = parser.strip_route_prefix(wp["name"])
         tanglish_name = translator.translate(clean_name)
